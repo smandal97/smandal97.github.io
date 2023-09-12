@@ -82,13 +82,11 @@ analytics:
 author:
   name             : "Soham Mandal"
   avatar           : "profile.png"
-  bio              : "Your biography for the left-hand sidebar"
-  location         : "Location"
+  bio              : "Computational astrophysics researcher, getting a PhD from the Department of Physics and Astronomy at Purdue University"
+  location         : "525 Northwestern Ave, West Lafayette, IN 47907"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  googlescholar    : "https://scholar.google.com/citations?user=xH4Kyp8AAAAJ&hl=en"
+  email            : "mandal0@purdue.edu"
   uri              :
   bitbucket        :
   codepen          :
@@ -96,17 +94,16 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "academicpages"
+  github           : "smandal97"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "http://orcid.org/0000-0001-9484-1262"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
   twitter          : "replacethistwitterhandle"
