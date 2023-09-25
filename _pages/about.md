@@ -8,7 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-This is my web page.
+(If you think I'm a Star Wars fan, you'd be absolutely right.)
+
+Hi, I am Soham Mandal. I am studying to be an astrophysicist.
 
 A data-driven personal website
 ======
