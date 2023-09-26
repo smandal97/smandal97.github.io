@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-(If you think I'm a Star Wars fan, you'd be absolutely right.)
+(If you think I'm a Star Wars fan, you'd be absolutely right. And if you responded to the above with "General Kenobi", here's a high-five!)
 
 Hi, I am Soham Mandal. I am studying to be an astrophysicist.
 
