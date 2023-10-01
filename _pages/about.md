@@ -10,7 +10,9 @@ redirect_from:
 
 (If you think I'm a Star Wars fan, you'd be absolutely right. And if you responded to the above with "General Kenobi", here's a high-five!)
 
-I work on numerical methods for studying astrophysical fluid dynamics as a graduate student in Professor Paul Duffell's group at Purdue. My interests lie in devising new numerical techniques and studying high velocity astrophysical outflows that expand by many orders of magnitude. I wrote a novel expanding mesh hydro code called Sprout to handle the problem of large dynamic ranges that come with such outflows.
+I am a final year PhD candidate at the Department of Physics and Astronomy at Purdue University. I work on computational fluid dynamics under the supervision of Prof. Paul Duffell (read more about the Paul Duffell Research Group here!).
+
+My interests lie in devising new numerical techniques and studying high velocity astrophysical outflows that expand by many orders of magnitude. I wrote a novel expanding mesh hydro code called Sprout to handle the problem of large dynamic ranges that come with such outflows.
 
 A data-driven personal website
 ======
