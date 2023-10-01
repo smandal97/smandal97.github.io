@@ -6,7 +6,6 @@ excerpt: 'I present the publicly available moving-mesh hydrodynamics code Sprout
 date: 2023-07-01
 venue: 'The Astrophysical Journal Supplements'
 paperurl: 'https://ui.adsabs.harvard.edu/abs/2023arXiv230713785M'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
 [Download paper here](http://academicpages.github.io/files/paper1.pdf)
