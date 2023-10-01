@@ -10,7 +10,7 @@ redirect_from:
 
 (If you think I'm a Star Wars fan, you'd be absolutely right. And if you responded to the above with "General Kenobi", here's a high-five!)
 
-Hi, I am Soham Mandal. I am studying to be an astrophysicist.
+I work on numerical methods for studying astrophysical fluid dynamics as a graduate student in Professor Paul Duffell's group at Purdue. My interests lie in devising new numerical techniques and studying high velocity astrophysical outflows that expand by many orders of magnitude. I wrote a novel expanding mesh hydro code called Sprout to handle the problem of large dynamic ranges that come with such outflows.
 
 A data-driven personal website
 ======
