@@ -5,8 +5,9 @@ permalink: /publications/
 author_profile: true
 ---
 
-All my astro related publications are listed in the following NASA ADS link:
+My astro related publications are listed in the following NASA ADS link:
 
+All of my publications (including those in electrical engineering) can be found in the following Google Scholar link:
 
 
 
