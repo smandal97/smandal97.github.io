@@ -4,7 +4,7 @@ main:
     url: /portfolio/
     
   - title: "Publications"
-    url: https://scholar.google.com/citations?user=xH4Kyp8AAAAJ&hl=en
+    url: /_pages/publications.md
 
   - title: "Talks"
     url: /_pages/talkmap.html    
