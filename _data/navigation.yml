@@ -4,7 +4,7 @@ main:
     url: /portfolio/
     
   - title: "Publications"
-    url: /_pages/publications.md
+    url: /_pages/archive-layout-with-content.md
 
   - title: "Talks"
     url: /_pages/talkmap.html    
