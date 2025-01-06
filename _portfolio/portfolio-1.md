@@ -1,6 +1,6 @@
 ---
 title: "Anisotropies in Supernova Remnants"
-excerpt: "Short description of SNR research<br/><img src='/images/SNR_synthetic.png'>"
+excerpt: "Short description of SNR research<br/><img src='/images/snr_synthetic.png'>"
 collection: portfolio
 ---
 
