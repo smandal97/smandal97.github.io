@@ -4,10 +4,10 @@ main:
     url: /portfolio/
     
   - title: "Publications"
-    url: /_pages/archive-layout-with-content.md
+    url: /pages/archive-layout-with-content.md
 
   - title: "Talks"
-    url: /_pages/talkmap.html    
+    url: /pages/talkmap.html    
 
   - title: "Outreach"
     url: /teaching/    
