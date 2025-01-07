@@ -5,16 +5,10 @@ permalink: /publications/
 author_profile: true
 ---
 
-My astro related publications are listed in the following NASA ADS link:
+My astro related publications are listed in [my NASA ADS library](https://ui.adsabs.harvard.edu).
 
-All of my publications (including those in electrical engineering) can be found in <u><a href="{{https://scholar.google.com/citations?user=xH4Kyp8AAAAJ&hl=en}}">my Google Scholar profile</a>.</u>
+All of my publications (astrophysics and soft computing techniques in engineering) can be found in [my Google Scholar profile](https://scholar.google.com/citations?user=xH4Kyp8AAAAJ&hl=en).
 
-
-
-
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
 
 {% include base_path %}
 
