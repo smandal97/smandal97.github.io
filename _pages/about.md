@@ -18,10 +18,10 @@ I study high velocity astrophysical outflows and work on devising new numerical 
 When I'm not working, I'm usually busy cooking, stargazing, playing badminton, or hanging out with Bayek or Kratos on my gaming console. I hail from the metropolitan city of Kolkata (lovingly called the 'City of Joy') in the coastal state of West Bengal, India.
 
 
-#Contact information
-Dr. Soham Mandal
-Department of Astronomy
-University of Virginia
-530 McCormick Avenue
-Charlottesville, VA 22901, USA
-Email: soham@virginia.edu
+# Contact information
+Dr. Soham Mandal    
+Department of Astronomy    
+University of Virginia    
+530 McCormick Avenue    
+Charlottesville, VA 22901, USA     
+Email: soham@virginia.edu    
