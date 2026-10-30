@@ -1,138 +1,118 @@
-/* Hero background: a supernova remnant shell, drawn procedurally.
-   The shell expands once on page load with Sedov-Taylor scaling (R ∝ t^0.4)
-   on comoving coordinates, the way an expanding mesh follows the flow,
-   then holds still. Colours use the inferno colormap. */
+/* Hero background: a real hydrodynamic simulation of supernova ejecta
+   ploughing into circumstellar gas (axisymmetric run, one quadrant).
+
+   assets/sim/remnant.mp4 (+ .webm)   greyscale "emission" of the shocked gas, one frame per output
+   assets/sim/remnant-final.png   the last output at full resolution
+
+   Each frame is coloured with the inferno colormap, given transparency where
+   there is no shocked gas, and mirrored about the symmetry axis and the
+   equator to show the whole remnant. The run plays once, then holds. */
 (function () {
   var canvas = document.querySelector('.hero__shell');
   if (!canvas || !canvas.getContext) return;
+  var base = canvas.getAttribute('data-src') || '/assets/sim/';
   var ctx = canvas.getContext('2d');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // inferno colormap stops
+  // inferno colormap
   var stops = [
     [0.00, 0, 0, 4], [0.13, 27, 12, 65], [0.25, 74, 12, 107], [0.38, 120, 28, 109],
     [0.50, 165, 44, 96], [0.63, 207, 68, 70], [0.75, 237, 105, 37], [0.88, 251, 155, 6],
     [1.00, 252, 255, 164]
   ];
-  var LUT = new Uint8ClampedArray(256 * 3);
+  var LUT = new Uint8ClampedArray(256 * 4);
   for (var i = 0; i < 256; i++) {
     var t = i / 255, k = 0;
     while (k < stops.length - 2 && t > stops[k + 1][0]) k++;
     var a = stops[k], b = stops[k + 1], f = (t - a[0]) / (b[0] - a[0]);
-    LUT[i * 3] = a[1] + (b[1] - a[1]) * f;
-    LUT[i * 3 + 1] = a[2] + (b[2] - a[2]) * f;
-    LUT[i * 3 + 2] = a[3] + (b[3] - a[3]) * f;
+    LUT[i * 4] = a[1] + (b[1] - a[1]) * f;
+    LUT[i * 4 + 1] = a[2] + (b[2] - a[2]) * f;
+    LUT[i * 4 + 2] = a[3] + (b[3] - a[3]) * f;
+    LUT[i * 4 + 3] = Math.min(255, i * 3);       // dark = transparent, so the page colour shows
   }
 
-  // value noise
-  var P = new Uint8Array(512);
-  var seed = 1181;
-  function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
-  for (i = 0; i < 256; i++) P[i] = i;
-  for (i = 255; i > 0; i--) { var j = Math.floor(rnd() * (i + 1)); var s = P[i]; P[i] = P[j]; P[j] = s; }
-  for (i = 0; i < 256; i++) P[i + 256] = P[i];
-  var G = new Float32Array(256);
-  for (i = 0; i < 256; i++) G[i] = rnd();
-  function noise(x, y) {
-    var xi = Math.floor(x), yi = Math.floor(y), xf = x - xi, yf = y - yi;
-    xi &= 255; yi &= 255;
-    var u = xf * xf * (3 - 2 * xf), v = yf * yf * (3 - 2 * yf);
-    var aa = G[P[P[xi] + yi]], ba = G[P[P[xi + 1] + yi]];
-    var ab = G[P[P[xi] + yi + 1]], bb = G[P[P[xi + 1] + yi + 1]];
-    return (aa + (ba - aa) * u) + ((ab + (bb - ab) * u) - (aa + (ba - aa) * u)) * v;
-  }
-  function ridge(x, y) {
-    var sum = 0, amp = 0.55, fr = 1;
-    for (var o = 0; o < 3; o++) {
-      var n = 1 - Math.abs(noise(x * fr, y * fr) * 2 - 1);
-      sum += n * n * n * amp; amp *= 0.5; fr *= 2.03;
+  var src = document.createElement('canvas'), sctx = src.getContext('2d', { willReadFrequently: true });
+  var quad = document.createElement('canvas'), qctx = quad.getContext('2d');
+  var disk = document.createElement('canvas'), dctx = disk.getContext('2d');
+  var lastSource = null;
+
+  function colourise(source, size) {
+    if (src.width !== size) { src.width = src.height = quad.width = quad.height = size; disk.width = disk.height = size * 2; }
+    sctx.drawImage(source, 0, 0, size, size);
+    var img = sctx.getImageData(0, 0, size, size), d = img.data;
+    for (var p = 0; p < d.length; p += 4) {
+      var v = d[p + 1], o = v * 4;                 // green channel = luma for a grey frame
+      d[p] = LUT[o]; d[p + 1] = LUT[o + 1]; d[p + 2] = LUT[o + 2]; d[p + 3] = LUT[o + 3];
     }
-    return sum;
+    qctx.putImageData(img, 0, 0);
+    // mirror the quadrant (origin bottom-left) into a full disk, pixel-exact so there are no seams
+    dctx.clearRect(0, 0, size * 2, size * 2);
+    for (var sx = -1; sx <= 1; sx += 2) for (var sy = -1; sy <= 1; sy += 2) {
+      dctx.setTransform(sx, 0, 0, sy, size, size);
+      dctx.drawImage(quad, 0, -size);
+    }
+    dctx.setTransform(1, 0, 0, 1, 0, 0);
   }
 
-  // edge perturbation per angle: Rayleigh-Taylor fingers along the contact surface
-  var NA = 2048, EDGE = new Float32Array(NA);
-  for (i = 0; i < NA; i++) {
-    var th = (i / NA) * Math.PI * 2, cx = Math.cos(th), sy = Math.sin(th);
-    EDGE[i] = 1 + 0.045 * (noise(cx * 3 + 9, sy * 3 + 9) - 0.5)
-                + 0.03 * Math.pow(noise(cx * 14 + 40, sy * 14 + 40), 3)
-                + 0.012 * noise(cx * 40 + 70, sy * 40 + 70);
+  function geometry(W, H) {
+    var wide = W / H > 1.05;
+    // the forward shock sits at ~93% of the quadrant at the end of the run
+    var R = wide ? Math.min(H * 0.86, W * 0.42) : Math.min(W * 0.55, H * 0.34);
+    // rot turns the remnant so the symmetry axis, where the run has a small
+    // numerical artefact, points off-screen rather than straight up
+    return wide ? { cx: W * 0.71, cy: H * 1.02, S: R / 0.93, rot: -0.87 }
+                : { cx: W * 0.62, cy: H * 0.33, S: R / 0.93, rot: -0.87 };
   }
 
-  var buf = document.createElement('canvas'), bctx = buf.getContext('2d');
-  var W, H, BW, BH, img, geom;
-
-  // quality: buffer width in pixels. Lower while animating, sharper for the final frame.
-  function layout(quality) {
+  function paint(source, size) {
+    lastSource = [source, size];
     var r = canvas.getBoundingClientRect();
     var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    W = canvas.width = Math.round(r.width * dpr);
-    H = canvas.height = Math.round(r.height * dpr);
-    var scale = Math.max(1, W / quality);
-    BW = buf.width = Math.max(1, Math.round(W / scale));
-    BH = buf.height = Math.max(1, Math.round(H / scale));
-    img = bctx.createImageData(BW, BH);
-    var wide = r.width / r.height > 1.05;
-    geom = wide
-      ? { cx: BW * 0.72, cy: BH * 1.04, R: Math.min(BH * 0.86, BW * 0.4) }
-      : { cx: BW * 0.6, cy: BH * 0.36, R: Math.min(BW * 0.52, BH * 0.32) };
-  }
-
-  function render(progress) {
-    // Sedov-Taylor: R grows as t^0.4
-    var R = geom.R * (0.12 + 0.88 * Math.pow(progress, 0.4));
-    var bright = 0.55 + 0.45 * Math.min(1, progress * 1.6);
-    var d = img.data, cx = geom.cx, cy = geom.cy, inv = 1 / R;
-    var lim = 1.18;
-    for (var y = 0; y < BH; y++) {
-      var dy = (y - cy) * inv;
-      for (var x = 0; x < BW; x++) {
-        var dx = (x - cx) * inv, p = (y * BW + x) * 4;
-        var r = Math.sqrt(dx * dx + dy * dy);
-        if (r > lim) { d[p + 3] = 0; continue; }
-        var ang = Math.atan2(dy, dx); if (ang < 0) ang += 6.283185307;
-        var fa = ang / 6.283185307 * NA, ia = fa | 0, ta = fa - ia;
-        var e = EDGE[ia % NA] * (1 - ta) + EDGE[(ia + 1) % NA] * ta;
-        var q = r / e, v;
-        if (q < 1) {
-          // projected emission from a thick shell, brightening toward the limb
-          var limb = 0.18 + 0.82 * Math.pow(q, 7);
-          var fil = ridge(dx * 6.5 + 20, dy * 6.5 + 20);
-          v = limb * (0.3 + 1.05 * fil) + 0.55 * Math.exp(-Math.pow((1 - q) / 0.022, 2));
-        } else {
-          v = 0.6 * Math.exp(-(q - 1) / 0.012);
-        }
-        v *= bright;
-        if (v > 1) v = 1;
-        var c = (v * 255) | 0;
-        d[p] = LUT[c * 3]; d[p + 1] = LUT[c * 3 + 1]; d[p + 2] = LUT[c * 3 + 2];
-        d[p + 3] = Math.min(255, v * 600);
-      }
-    }
-    bctx.putImageData(img, 0, 0);
+    var W = Math.round(r.width * dpr), H = Math.round(r.height * dpr);
+    if (canvas.width !== W || canvas.height !== H) { canvas.width = W; canvas.height = H; }
+    colourise(source, size);
+    var g = geometry(W, H), S = g.S;
     ctx.clearRect(0, 0, W, H);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(buf, 0, 0, W, H);
+    ctx.setTransform(1, 0, 0, 1, g.cx, g.cy);
+    ctx.rotate(g.rot);
+    ctx.drawImage(disk, -S, -S, 2 * S, 2 * S);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
   }
 
-  var DURATION = 2600, start = null, done = false;
-  function frame(ts) {
-    if (start === null) start = ts;
-    var p = Math.min(1, (ts - start) / DURATION);
-    render(p);
-    if (p < 1) requestAnimationFrame(frame);
-    else { done = true; layout(FINAL); render(1); }
-  }
+  var still = new Image();
+  var stillReady = new Promise(function (res) { still.onload = res; still.onerror = res; });
+  still.src = base + 'remnant-final.png';
+  function showStill() { stillReady.then(function () { if (still.naturalWidth) paint(still, still.naturalWidth); }); }
 
-  var ANIM = 480, FINAL = 1100;
-  layout(reduce ? FINAL : ANIM);
-  if (reduce) { render(1); done = true; }
-  else requestAnimationFrame(frame);
+  if (reduce) { showStill(); }
+  else {
+    var video = document.createElement('video');
+    video.muted = true; video.playsInline = true; video.preload = 'auto';
+    video.setAttribute('muted', ''); video.setAttribute('playsinline', '');
+    video.src = base + (video.canPlayType('video/mp4; codecs="avc1.42E01E"') ? 'remnant.mp4' : 'remnant.webm');
+    var started = false, finished = false;
+    var fallback = setTimeout(function () { if (!started) { finished = true; showStill(); } }, 2500);
+    var useRVFC = 'requestVideoFrameCallback' in video;
+    function tick() {
+      if (finished) return;
+      if (video.readyState >= 2) paint(video, 540);
+      if (useRVFC) video.requestVideoFrameCallback(tick); else requestAnimationFrame(tick);
+    }
+    video.addEventListener('playing', function () {
+      if (started || finished) return;
+      started = true; clearTimeout(fallback); tick();
+    });
+    video.addEventListener('ended', function () { finished = true; showStill(); });
+    video.addEventListener('error', function () { finished = true; clearTimeout(fallback); showStill(); });
+    var p = video.play();
+    if (p && p.catch) p.catch(function () { finished = true; clearTimeout(fallback); showStill(); });
+  }
 
   var rt;
   window.addEventListener('resize', function () {
     clearTimeout(rt);
-    rt = setTimeout(function () { if (done) { layout(FINAL); render(1); } }, 150);
+    rt = setTimeout(function () { if (lastSource) paint(lastSource[0], lastSource[1]); }, 150);
   });
 })();

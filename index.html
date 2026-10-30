@@ -5,7 +5,7 @@ body_class: home
 ---
 {% assign a = site.author %}
 <section class="hero" aria-labelledby="hero-name">
-  <canvas class="hero__shell" aria-hidden="true"></canvas>
+  <canvas class="hero__shell" aria-hidden="true" data-src="{{ '/assets/sim/' | relative_url }}"></canvas>
   <div class="hero__inner wrap">
     <h1 class="hero__name" id="hero-name">Soham<br>Mandal</h1>
     <p class="hero__lede">I study supernovae and the fast outflows they drive, and build numerical methods that can follow them as they grow.</p>
@@ -19,7 +19,7 @@ body_class: home
       <li><a href="https://orcid.org/{{ a.orcid }}">ORCID</a></li>
     </ul>
   </div>
-  <p class="hero__caption wrap">Background: a simulated supernova remnant shell, drawn live in your browser.</p>
+  <p class="hero__caption wrap">Background: one of my simulations of supernova ejecta running into surrounding gas, with the shocked gas lit up.</p>
 </section>
 
 <section class="section" id="about" aria-labelledby="about-h">
