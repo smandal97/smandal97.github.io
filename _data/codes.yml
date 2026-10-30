@@ -1,0 +1,13 @@
+# Codes listed on /codes/. "manual" is a page on this site; leave it out if there isn't one.
+
+- name: "Sprout"
+  tagline: "Moving-mesh hydrodynamics on a uniformly expanding Cartesian grid"
+  text: "Sprout solves the equations of ideal hydrodynamics on a Cartesian mesh that expands with the flow, so it can follow outflows such as supernova remnants and AGN jets over many orders of magnitude in size with little numerical diffusion. It is written in C, runs in parallel with MPI, writes HDF5 output, and restarts from any checkpoint. Physics modules (initial conditions, boundaries, Riemann solver, reconstruction, mesh motion and more) are picked when you compile."
+  language: "C, MPI, HDF5"
+  license: "MIT"
+  repo: "https://github.com/smandal97/Sprout"
+  paper: "https://ui.adsabs.harvard.edu/abs/2023ApJS..269...30M"
+  paper_label: "Mandal & Duffell 2023, ApJS 269, 30"
+  manual: "/codes/sprout/"
+  image: "/images/sprout.png"
+  image_alt: "Schematic of the Sprout grid: a small cubic mesh at t = 0 grows into a larger mesh with the same number of cells at t = 0.1."

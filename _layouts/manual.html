@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="article article--manual wrap">
+  <p class="article__back"><a href="{{ '/codes/' | relative_url }}">Back to codes</a></p>
+  <h1 class="article__title">{{ page.title }}</h1>
+  {% if page.lede %}<p class="article__lede">{{ page.lede }}</p>{% endif %}
+  <div class="manual">
+    <nav class="manual__toc" aria-label="On this page">
+      <p class="manual__toc-title">On this page</p>
+      <ol>
+        {% for s in page.toc %}<li><a href="#{{ s.id }}">{{ s.title }}</a></li>{% endfor %}
+      </ol>
+    </nav>
+    <div class="prose prose--manual">
+      {{ content }}
+    </div>
+  </div>
+</article>

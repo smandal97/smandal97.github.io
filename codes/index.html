@@ -1,0 +1,28 @@
+---
+layout: default
+title: Codes
+permalink: /codes/
+---
+<article class="article article--wide wrap">
+  <h1 class="article__title">Codes</h1>
+  <p class="article__lede">Software I've written for my research, free to use.</p>
+  {% for c in site.data.codes %}
+  <section class="code" aria-labelledby="code-{{ forloop.index }}">
+    <div class="code__text">
+      <h2 class="code__name" id="code-{{ forloop.index }}">{{ c.name }}</h2>
+      <p class="code__tagline">{{ c.tagline }}</p>
+      <p>{{ c.text }}</p>
+      <dl class="code__facts">
+        <div><dt>Language</dt><dd>{{ c.language }}</dd></div>
+        <div><dt>License</dt><dd>{{ c.license }}</dd></div>
+        {% if c.paper %}<div><dt>Cite</dt><dd><a href="{{ c.paper }}">{{ c.paper_label }}</a></dd></div>{% endif %}
+      </dl>
+      <p class="code__actions">
+        {% if c.manual %}<a class="btn btn--solid" href="{{ c.manual | relative_url }}">Read the manual</a>{% endif %}
+        <a class="btn btn--line" href="{{ c.repo }}">View on GitHub</a>
+      </p>
+    </div>
+    {% if c.image %}<figure class="code__fig"><img src="{{ c.image | relative_url }}" alt="{{ c.image_alt }}"></figure>{% endif %}
+  </section>
+  {% endfor %}
+</article>
