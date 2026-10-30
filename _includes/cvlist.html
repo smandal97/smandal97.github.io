@@ -1,0 +1,8 @@
+<ul class="cvlist">
+{% for e in include.items %}
+  <li class="cvlist__item">
+    <span class="cvlist__when">{{ e.when }}</span>
+    <div><p class="cvlist__role">{{ e.role }}</p><p class="cvlist__place">{{ e.place }}</p></div>
+  </li>
+{% endfor %}
+</ul>

@@ -1,18 +1,27 @@
-# Newest first. Optional: image, url, link_label
+# Newest first. "date" (YYYY-MM) is shown as month and year unless "when" is given.
+# Optional: when, image, url, link_label
+
+- title: "Astronomy on Tap"
+  kind: "Public talk"
+  date: "2025-10"
+  when: "Fall 2025"
+  where: "Charlottesville"
+  text: "A talk for a general audience at Astronomy on Tap Charlottesville, a night of short astronomy talks at a local bar."
 
 - title: "What happens to supernovae after they explode?"
   kind: "Podcast"
-  date: "2024-09"
+  date: "2024-06"
   where: "The Astrophysics Podcast"
   text: "I talked with Paul Duffell about my research on supernovae and how I ended up in astrophysics."
   image: "/images/podcast.jpg"
-  url: "https://youtu.be/BCg1AkigRbg"
-  link_label: "Watch the episode"
+  url: "https://rss.com/podcasts/astrophysics/1494506/"
+  link_label: "Listen to the episode"
 
 - title: "Physics Inside Out"
   kind: "Summer science camp"
-  date: "2024-08"
+  date: "2023-06"
+  when: "Summers 2022 and 2023"
   where: "Purdue University"
-  text: "A five-day on-campus program for grade 7 and 8 students. I led Scaling the Solar System, where students worked out scale factors for planet sizes and distances, then placed their models across campus."
+  text: "A five-day on-campus program for middle-school students. I led Scaling the Solar System, where students worked out scale factors for planet sizes and distances, then built their models and placed them across campus."
   url: "https://www.physics.purdue.edu/duffell/outreach.html"
   link_label: "About the program"

@@ -285,3 +285,17 @@ sup { line-height: 0; }
 .prose th { font-family: var(--sans); font-size: .85rem; font-weight: 600; color: var(--muted); }
 .prose td:first-child { white-space: nowrap; }
 @media (max-width: 52rem) { .manual { grid-template-columns: minmax(0, 1fr); } .manual__toc { position: static; } .prose td:first-child { white-space: normal; } }
+
+/* ---------- Experience ---------- */
+.section__body.exp { max-width: 60rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.75rem 3rem; }
+.exp__group .subhead { margin-bottom: .85rem; }
+.exp__cv { grid-column: 1 / -1; font-family: var(--sans); font-size: .9375rem; margin: 0; }
+.cvlist { list-style: none; margin: 0; padding: 0; }
+.cvlist__item { display: grid; grid-template-columns: minmax(0, 1fr); padding: .6rem 0; border-top: 1px solid var(--rule); }
+.cvlist__item:first-child { border-top: 0; padding-top: 0; }
+.cvlist__when { order: 2; font-family: var(--sans); font-size: .8125rem; color: var(--muted); font-variant-numeric: tabular-nums; margin-top: .15rem; }
+.cvlist__when:empty { display: none; }
+.cvlist p { margin: 0; }
+.cvlist__role { font-size: 1.05rem; line-height: 1.4; }
+.cvlist__place { font-size: .975rem; color: var(--muted); line-height: 1.45; }
+@media (max-width: 40rem) { .section__body.exp { grid-template-columns: 1fr; gap: 2.25rem; } }

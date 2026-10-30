@@ -1,0 +1,31 @@
+# Career summary shown on the home page. Keep newest first in each list.
+
+positions:
+  - { role: "Distinguished Postdoctoral Fellow", place: "Academia Sinica Institute of Astronomy and Astrophysics, Taiwan", when: "Sept 2026 – present" }
+  - { role: "VITA Postdoctoral Research Fellow", place: "University of Virginia", when: "Sept 2024 – Aug 2026" }
+  - { role: "Visiting Researcher", place: "Purdue University", when: "May – Aug 2024" }
+
+education:
+  - { role: "PhD, Physics and Astronomy", place: "Purdue University", when: "2024" }
+  - { role: "MS, Physics and Astronomy", place: "Purdue University", when: "2020" }
+  - { role: "BE, Electrical Engineering", place: "Jadavpur University", when: "2018" }
+
+awards:
+  - { role: "Distinguished Postdoctoral Fellowship", place: "ASIAA, Taiwan", when: "2026" }
+  - { role: "IAU Travel Grant", place: "IAU Symposium 406", when: "2026" }
+  - { role: "KVPY Fellowship", place: "Government of India", when: "2014" }
+
+grants:
+  - { role: "Co-I, NASA JWST program", place: "Tracing ejecta and dust evolution in the Type Ia remnant SNR 0509-67.5; 40.5 hours of observing time" }
+
+teaching:
+  - { role: "Summer Lecturer, PHYS 221 (Electrodynamics)", place: "Purdue University", when: "Summers 2019, 2020" }
+  - { role: "Teaching Assistant, PHYS 536 (Modern Electronics Lab)", place: "Purdue University", when: "Spring 2021" }
+  - { role: "Teaching Assistant, PHYS 172 (Modern Mechanics)", place: "Purdue University", when: "Spring and Fall 2019" }
+  - { role: "Teaching Assistant, PHYS 263 (Introduction to Astronomy)", place: "Purdue University", when: "Fall 2018" }
+
+service:
+  - { role: "LOC member, Kavli Summer Program in Astrophysics", place: "University of Virginia", when: "2025" }
+  - { role: "LOC member, Rise_Time 2024", place: "Purdue University", when: "2024" }
+  - { role: "Vice President, Physics Graduate Students Association", place: "Purdue University", when: "2021–2022" }
+  - { role: "Event lead, Circuistic, Convolution tech fest", place: "Jadavpur University", when: "2017" }

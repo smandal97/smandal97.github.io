@@ -1,6 +1,11 @@
 # Newest first. kind: invited | contributed
 # Optional: url (slides, recording or event page)
 
+- { kind: invited, date: "2026-01", event: "Colloquium", host: "Academia Sinica Institute of Astronomy and Astrophysics" }
+- { kind: invited, date: "2025-12", event: "TAPIR seminar", host: "California Institute of Technology" }
+- { kind: invited, date: "2025-10", event: "THEA seminar", host: "Columbia University" }
+- { kind: invited, date: "2025-10", event: "Stars and Plasma Astrophysics meeting", host: "Center for Computational Astrophysics, Flatiron Institute" }
+- { kind: invited, date: "2025-09", event: "ITC luncheon seminar", host: "Center for Astrophysics | Harvard & Smithsonian" }
 - { kind: invited, date: "2024-01", event: "TAPIR seminar", host: "California Institute of Technology" }
 - { kind: invited, date: "2023-10", event: "Special seminar", host: "CIERA, Northwestern University" }
 - { kind: invited, date: "2023-10", event: "Special seminar", host: "New York University" }
@@ -11,6 +16,11 @@
 - { kind: invited, date: "2023-06", event: "State of the Universe seminar", host: "Tata Institute of Fundamental Research, Mumbai", note: "Characterizing anisotropies in supernova remnants", url: "https://theory.tifr.res.in/~sotu" }
 - { kind: invited, date: "2022-05", event: "Tea talk", host: "Carnegie Observatories" }
 
+- { kind: contributed, date: "2026-08", event: "Rise_Time", host: "Purdue University, USA" }
+- { kind: contributed, date: "2026-05", event: "IAU Symposium 406", host: "Turku, Finland" }
+- { kind: contributed, date: "2025-08", event: "SN100 Conference", host: "Stockholm, Sweden" }
+- { kind: contributed, date: "2025-07", event: "Rutgers Summer Transient Soiree", host: "Rutgers University, USA" }
+- { kind: contributed, date: "2025-05", event: "Annual Symposium", host: "National Radio Astronomy Observatory, USA" }
 - { kind: contributed, date: "2024-08", event: "Rise_Time", host: "Purdue University, USA" }
 - { kind: contributed, date: "2024-06", event: "Supernova Remnants III", host: "Crete, Greece" }
 - { kind: contributed, date: "2023-09", event: "Supernova Explosions (SNEX) Conference", host: "Technion, Israel" }

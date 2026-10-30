@@ -28,10 +28,26 @@ body_class: home
     <div class="section__body about">
       <img class="about__photo" src="{{ a.photo | relative_url }}" alt="Portrait of Soham Mandal" width="580" height="558">
       <div class="prose">
-        <p>I am a Distinguished Postdoctoral Fellow at the Academia Sinica Institute of Astronomy and Astrophysics. Before that I was a VITA Postdoctoral Fellow at the University of Virginia, from September 2024 to September 2026. I received my PhD from Purdue University, advised by <a href="https://www.physics.purdue.edu/duffell/index.html">Prof. Paul Duffell</a>.</p>
-        <p>I study high-velocity astrophysical outflows and develop numerical techniques for modelling them. I wrote <a href="{{ '/research/sprout/' | relative_url }}">Sprout</a>, a hydro code whose computational domain expands with the fluid, which makes it cheap to follow outflows that grow over many orders of magnitude in space and time. My main interest is supernovae, the explosive deaths of stars. I have also worked on astrophysical jets, from both the theory and the observing side.</p>
+        <p>I am a Distinguished Postdoctoral Fellow at the Academia Sinica Institute of Astronomy and Astrophysics. Before that I was a VITA Postdoctoral Fellow at the University of Virginia, from September 2024 to August 2026. I received my PhD from Purdue University, advised by <a href="https://www.physics.purdue.edu/duffell/index.html">Prof. Paul Duffell</a>.</p>
+        <p>I study high-velocity astrophysical outflows and develop numerical techniques for modelling them. I wrote <a href="{{ '/research/sprout/' | relative_url }}">Sprout</a>, a hydro code whose computational domain expands with the fluid, which makes it cheap to follow outflows that grow over many orders of magnitude in space and time. My main interests are supernovae, the explosive deaths of stars, and the remnants they leave behind, along with the stellar evolution and radiative processes that shape what we observe. I have also worked on astrophysical jets, from both the theory and the observing side.</p>
         <p>Away from work I cook, stargaze, play badminton and soccer, and spend time on my gaming console. I grew up in Kolkata, the City of Joy, in West Bengal, India.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="experience" aria-labelledby="exp-h">
+  <div class="section__grid wrap">
+    <h2 class="section__title" id="exp-h">Experience</h2>
+    <div class="section__body exp">
+      {% assign cv = site.data.cv %}
+      <div class="exp__group"><h3 class="subhead subhead--first">Positions</h3>{% include cvlist.html items=cv.positions %}</div>
+      <div class="exp__group"><h3 class="subhead subhead--first">Education</h3>{% include cvlist.html items=cv.education %}</div>
+      <div class="exp__group"><h3 class="subhead subhead--first">Fellowships and awards</h3>{% include cvlist.html items=cv.awards %}</div>
+      <div class="exp__group"><h3 class="subhead subhead--first">Grants</h3>{% include cvlist.html items=cv.grants %}</div>
+      <div class="exp__group"><h3 class="subhead subhead--first">Teaching</h3>{% include cvlist.html items=cv.teaching %}</div>
+      <div class="exp__group"><h3 class="subhead subhead--first">Service</h3>{% include cvlist.html items=cv.service %}</div>
+      <p class="exp__cv"><a href="{{ a.cv | relative_url }}">Download the full CV (PDF)</a></p>
     </div>
   </div>
 </section>
@@ -93,7 +109,7 @@ body_class: home
         {% if o.image %}<a class="outreach__fig" href="{{ o.url }}" tabindex="-1" aria-hidden="true"><img src="{{ o.image | relative_url }}" alt="" loading="lazy"></a>{% endif %}
         <div>
           <h3 class="project__title">{{ o.title }}</h3>
-          <p class="meta">{{ o.kind }}, {{ o.where }}, {{ o.date | append: '-01' | date: '%B %Y' }}</p>
+          <p class="meta">{{ o.kind }}, {{ o.where }}, {% if o.when %}{{ o.when }}{% else %}{{ o.date | append: '-01' | date: '%B %Y' }}{% endif %}</p>
           <p>{{ o.text }}</p>
           {% if o.url %}<p><a href="{{ o.url }}">{{ o.link_label | default: 'More' }}</a></p>{% endif %}
         </div>
