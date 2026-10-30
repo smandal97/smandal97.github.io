@@ -1,0 +1,48 @@
+# ---------------------------------------------------------------
+# Site settings. Edit these, commit, and GitHub Pages rebuilds.
+# ---------------------------------------------------------------
+title: "Soham Mandal"
+description: "Astrophysicist studying supernovae, supernova remnants and high-velocity outflows with new numerical methods."
+url: "https://smandal97.github.io"
+baseurl: ""
+lang: en
+
+author:
+  name: "Soham Mandal"
+  position: "Distinguished Postdoctoral Fellow"
+  institution: "Academia Sinica Institute of Astronomy and Astrophysics"
+  institution_url: "https://www.asiaa.sinica.edu.tw/"
+  location: "Taipei, Taiwan"
+  photo: "/images/soham.jpg"
+  email: "soham@virginia.edu"
+  cv: "/files/SM_CV.pdf"
+  github: "smandal97"
+  google_scholar: "https://scholar.google.com/citations?user=xH4Kyp8AAAAJ&hl=en"
+  ads_library: "https://ui.adsabs.harvard.edu/public-libraries/g4GAXvjxTSKkJCB4581imA"
+  orcid: "0000-0001-9484-1262"
+
+# Research project pages live in _research/
+collections:
+  research:
+    output: true
+    permalink: /research/:name/
+
+defaults:
+  - scope: { path: "", type: research }
+    values: { layout: research }
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: null
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle

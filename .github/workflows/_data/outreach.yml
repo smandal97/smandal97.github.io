@@ -1,0 +1,18 @@
+# Newest first. Optional: image, url, link_label
+
+- title: "What happens to supernovae after they explode?"
+  kind: "Podcast"
+  date: "2024-09"
+  where: "The Astrophysics Podcast"
+  text: "I talked with Paul Duffell about my research on supernovae and how I ended up in astrophysics."
+  image: "/images/podcast.jpg"
+  url: "https://youtu.be/BCg1AkigRbg"
+  link_label: "Watch the episode"
+
+- title: "Physics Inside Out"
+  kind: "Summer science camp"
+  date: "2024-08"
+  where: "Purdue University"
+  text: "A five-day on-campus program for grade 7 and 8 students. I led Scaling the Solar System, where students worked out scale factors for planet sizes and distances, then placed their models across campus."
+  url: "https://www.physics.purdue.edu/duffell/outreach.html"
+  link_label: "About the program"

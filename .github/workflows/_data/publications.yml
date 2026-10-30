@@ -1,0 +1,90 @@
+# Newest first. "Soham Mandal" and "S. Mandal" are bolded automatically.
+# Fields: title, authors, venue, year, links (any of: ads, arxiv, doi, pdf, url)
+# topic: astro | engineering  (engineering papers are listed separately)
+
+- title: "Deciphering the Explosion Mechanism of Type Ia Supernovae Using Their Remnants. II. A Deep Dive into Double Detonations with SNR 0509-67.5"
+  authors: "Soham Mandal, Parviz Ghavamian, Priyam Das, Ivo Rolf Seitenzahl, Shazrene Mohamed, Ashley J. Ruiter"
+  venue: "The Astrophysical Journal"
+  year: 2026
+  topic: astro
+  links:
+    doi: "https://doi.org/10.3847/1538-4357/ae5e50"
+    arxiv: "https://arxiv.org/abs/2509.02422"
+
+- title: "A Novel Parameterization for Rapid Cooling in Supernova Remnants, with Applications to the Pa 30 Nebula"
+  authors: "Miranda Pikus, Paul C. Duffell, Soham Mandal, Abigail Polin"
+  venue: "The Astrophysical Journal"
+  year: 2026
+  topic: astro
+  links:
+    doi: "https://doi.org/10.3847/1538-4357/ae57ac"
+    arxiv: "https://arxiv.org/abs/2511.08519"
+
+- title: "Signature of the Explosion Mechanism of Type Ia SNe in Substructures of the Remnant: the Case of Tycho's SNR"
+  authors: "Soham Mandal, Núria Torres-Albà, Carles Badenes, Shazrene Mohamed"
+  venue: "arXiv e-prints, 2508.10752"
+  year: 2025
+  topic: astro
+  links:
+    arxiv: "https://arxiv.org/abs/2508.10752"
+
+- title: "Sculpting the Morphology of Supernova Remnant Pa 30 via Efficient Ejecta Cooling"
+  authors: "Paul C. Duffell, Abigail Polin, Soham Mandal"
+  venue: "arXiv e-prints, 2403.13641"
+  year: 2024
+  topic: astro
+  links:
+    arxiv: "https://arxiv.org/abs/2403.13641"
+
+- title: "Measurement of Anisotropies in Supernova Remnant Observations and Their Interpretation Using Numerical Models"
+  authors: "Soham Mandal, Paul C. Duffell, Abigail Polin, Dan Milisavljevic"
+  venue: "The Astrophysical Journal 972, 87"
+  year: 2024
+  topic: astro
+  links:
+    ads: "https://ui.adsabs.harvard.edu/abs/2024ApJ...972...87M"
+    arxiv: "https://arxiv.org/abs/2403.12264"
+
+- title: "A 3D Numerical Study of Anisotropies in Supernova Remnants"
+  authors: "Soham Mandal, Paul C. Duffell, Abigail Polin, Dan Milisavljevic"
+  venue: "The Astrophysical Journal 956, 130"
+  year: 2023
+  topic: astro
+  links:
+    ads: "https://ui.adsabs.harvard.edu/abs/2023ApJ...956..130M"
+
+- title: "Sprout: A Moving-Mesh Hydro Code Using a Uniformly Expanding Cartesian Grid"
+  authors: "Soham Mandal, Paul C. Duffell"
+  venue: "The Astrophysical Journal Supplement Series 269, 30"
+  year: 2023
+  topic: astro
+  links:
+    ads: "https://ui.adsabs.harvard.edu/abs/2023ApJS..269...30M"
+
+- title: "Numerical Investigation of Dynamical and Morphological Trends in Relativistic Jets"
+  authors: "Soham Mandal, Paul C. Duffell, Yuan Li"
+  venue: "The Astrophysical Journal 935, 42"
+  year: 2022
+  topic: astro
+  links:
+    ads: "https://ui.adsabs.harvard.edu/abs/2022ApJ...935...42M"
+
+- title: "TXS 0128+554: A Young Gamma-Ray-Emitting Active Galactic Nucleus with Episodic Jet Activity"
+  authors: "M. L. Lister, D. C. Homan, Y. Y. Kovalev, S. Mandal, A. B. Pushkarev, A. Siemiginowska"
+  venue: "The Astrophysical Journal 899, 141"
+  year: 2020
+  topic: astro
+  links:
+    ads: "https://ui.adsabs.harvard.edu/abs/2020ApJ...899..141L"
+
+- title: "Optimal Energy Management of Microgrids under Environmental Constraints Using Chaos Enhanced Differential Evolution"
+  authors: "Soham Mandal, K. K. Mandal"
+  venue: "Renewable Energy Focus 34, 129–141"
+  year: 2020
+  topic: engineering
+
+- title: "Non-convex Emission Constrained Economic Dispatch Using a New Self-Adaptive Particle Swarm Optimization Technique"
+  authors: "K. K. Mandal, S. Mandal, B. Bhattacharya, N. Chakraborty"
+  venue: "Applied Soft Computing 28, 188–195"
+  year: 2015
+  topic: engineering
