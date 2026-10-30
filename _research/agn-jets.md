@@ -1,6 +1,6 @@
 ---
 title: "Dynamics and morphology of AGN jets"
-order: 5
+order: 4
 summary: "Forty relativistic hydrodynamic simulations spanning engine luminosity, opening angle and ambient density. The Fanaroff–Riley split appears naturally, and recollimation shocks produce knots whose number scales with the jet-head energy density, consistent with M87 and Cygnus A."
 paper: "https://ui.adsabs.harvard.edu/abs/2022ApJ...935...42M"
 paper_label: "Mandal, Duffell & Li 2022, ApJ 935, 42"

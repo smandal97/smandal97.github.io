@@ -1,6 +1,6 @@
 ---
 title: "Sprout: a hydro code with an expanding mesh"
-order: 3
+order: 2
 summary: "Sprout solves ideal hydrodynamics on a Cartesian grid that expands with the flow. Following an outflow over several orders of magnitude in size keeps shocks and fine structure sharp, with little numerical diffusion and longer time steps, which makes it well suited to supernova remnants and AGN outflows."
 image: /images/sprout.png
 image_alt: "Schematic of the Sprout grid: a small cubic mesh at t = 0 grows into a larger mesh with the same number of cells at t = 0.1."

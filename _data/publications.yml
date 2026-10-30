@@ -1,12 +1,20 @@
 # Newest first. "Soham Mandal" and "S. Mandal" are bolded automatically.
 # Fields: title, authors, venue, year, links (any of: ads, arxiv, doi, pdf, url)
-# topic: astro | engineering  (engineering papers are listed separately)
+# Shown in this order inside each group, so keep newest first.
+# Papers whose author list starts with "Soham Mandal" are listed under First author; the rest under Co-author.
+
+- title: "Same Explosion, Many Faces: Numerical Modeling Reveals Viewing Angle as a Driver of Diversity for Core-Collapse SNe in Binary Systems"
+  authors: "Soham Mandal et al."
+  venue: "arXiv e-prints, 2607.28519"
+  year: 2026
+  links:
+    ads: "https://ui.adsabs.harvard.edu/abs/2026arXiv260728519M/abstract"
+    arxiv: "https://arxiv.org/abs/2607.28519"
 
 - title: "Deciphering the Explosion Mechanism of Type Ia Supernovae Using Their Remnants. II. A Deep Dive into Double Detonations with SNR 0509-67.5"
   authors: "Soham Mandal, Parviz Ghavamian, Priyam Das, Ivo Rolf Seitenzahl, Shazrene Mohamed, Ashley J. Ruiter"
   venue: "The Astrophysical Journal"
   year: 2026
-  topic: astro
   links:
     doi: "https://doi.org/10.3847/1538-4357/ae5e50"
     arxiv: "https://arxiv.org/abs/2509.02422"
@@ -15,7 +23,6 @@
   authors: "Miranda Pikus, Paul C. Duffell, Soham Mandal, Abigail Polin"
   venue: "The Astrophysical Journal"
   year: 2026
-  topic: astro
   links:
     doi: "https://doi.org/10.3847/1538-4357/ae57ac"
     arxiv: "https://arxiv.org/abs/2511.08519"
@@ -24,7 +31,6 @@
   authors: "Soham Mandal, Núria Torres-Albà, Carles Badenes, Shazrene Mohamed"
   venue: "arXiv e-prints, 2508.10752"
   year: 2025
-  topic: astro
   links:
     arxiv: "https://arxiv.org/abs/2508.10752"
 
@@ -32,7 +38,6 @@
   authors: "Paul C. Duffell, Abigail Polin, Soham Mandal"
   venue: "arXiv e-prints, 2403.13641"
   year: 2024
-  topic: astro
   links:
     arxiv: "https://arxiv.org/abs/2403.13641"
 
@@ -40,7 +45,6 @@
   authors: "Soham Mandal, Paul C. Duffell, Abigail Polin, Dan Milisavljevic"
   venue: "The Astrophysical Journal 972, 87"
   year: 2024
-  topic: astro
   links:
     ads: "https://ui.adsabs.harvard.edu/abs/2024ApJ...972...87M"
     arxiv: "https://arxiv.org/abs/2403.12264"
@@ -49,7 +53,6 @@
   authors: "Soham Mandal, Paul C. Duffell, Abigail Polin, Dan Milisavljevic"
   venue: "The Astrophysical Journal 956, 130"
   year: 2023
-  topic: astro
   links:
     ads: "https://ui.adsabs.harvard.edu/abs/2023ApJ...956..130M"
 
@@ -57,7 +60,6 @@
   authors: "Soham Mandal, Paul C. Duffell"
   venue: "The Astrophysical Journal Supplement Series 269, 30"
   year: 2023
-  topic: astro
   links:
     ads: "https://ui.adsabs.harvard.edu/abs/2023ApJS..269...30M"
 
@@ -65,7 +67,6 @@
   authors: "Soham Mandal, Paul C. Duffell, Yuan Li"
   venue: "The Astrophysical Journal 935, 42"
   year: 2022
-  topic: astro
   links:
     ads: "https://ui.adsabs.harvard.edu/abs/2022ApJ...935...42M"
 
@@ -73,7 +74,6 @@
   authors: "M. L. Lister, D. C. Homan, Y. Y. Kovalev, S. Mandal, A. B. Pushkarev, A. Siemiginowska"
   venue: "The Astrophysical Journal 899, 141"
   year: 2020
-  topic: astro
   links:
     ads: "https://ui.adsabs.harvard.edu/abs/2020ApJ...899..141L"
 
@@ -81,10 +81,8 @@
   authors: "Soham Mandal, K. K. Mandal"
   venue: "Renewable Energy Focus 34, 129–141"
   year: 2020
-  topic: engineering
 
 - title: "Non-convex Emission Constrained Economic Dispatch Using a New Self-Adaptive Particle Swarm Optimization Technique"
   authors: "K. K. Mandal, S. Mandal, B. Bhattacharya, N. Chakraborty"
   venue: "Applied Soft Computing 28, 188–195"
   year: 2015
-  topic: engineering

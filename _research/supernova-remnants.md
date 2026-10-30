@@ -1,6 +1,6 @@
 ---
 title: "Anisotropies in supernova remnants"
-order: 4
+order: 3
 summary: "3D models of remnants expanding into their surroundings, analysed through angular power spectra of the Rayleigh–Taylor structure at the interface. Applied to Chandra images of Tycho's remnant, the same spectrum recovers the scale of its fleece-like features and gives a circumstellar density of about 0.28 cm⁻³."
 image: /images/snr_synthetic.png
 image_alt: "Synthetic X-ray image of a simulated supernova remnant: a bright, filamentary half-shell in orange and purple."

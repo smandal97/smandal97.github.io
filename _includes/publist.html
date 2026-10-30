@@ -1,16 +1,18 @@
+{% comment %}
+  Lists publications from _data/publications.yml.
+  role="first": papers whose author list starts with "Soham Mandal".
+  role="co":    all other papers.
+{% endcomment %}
 <ol class="pubs">
-{% assign prev = "" %}
-{% for p in include.items %}
+{% for p in site.data.publications %}
+  {% assign lead = p.authors | slice: 0, 12 %}
+  {% if include.role == 'first' and lead != 'Soham Mandal' %}{% continue %}{% endif %}
+  {% if include.role == 'co' and lead == 'Soham Mandal' %}{% continue %}{% endif %}
   {% assign authors = p.authors | replace: 'Soham Mandal', '<strong>Soham Mandal</strong>' | replace: 'S. Mandal', '<strong>S. Mandal</strong>' %}
-  {% capture y %}{{ p.year }}{% endcapture %}
-  <li class="pub{% if y == prev %} pub--same{% endif %}">
-    <span class="pub__year">{% if y != prev %}{{ y }}{% endif %}</span>
-    <div class="pub__body">
-      <p class="pub__title">{% assign href = p.links.ads | default: p.links.doi | default: p.links.arxiv | default: p.links.url %}{% if href %}<a href="{{ href }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
-      <p class="pub__authors">{{ authors }}</p>
-      <p class="pub__venue"><cite>{{ p.venue }}</cite>{% if p.links %}<span class="pub__links">{% if p.links.ads %}<a href="{{ p.links.ads }}">ADS</a>{% endif %}{% if p.links.arxiv %}<a href="{{ p.links.arxiv }}">arXiv</a>{% endif %}{% if p.links.doi %}<a href="{{ p.links.doi }}">DOI</a>{% endif %}{% if p.links.pdf %}<a href="{{ p.links.pdf | relative_url }}">PDF</a>{% endif %}</span>{% endif %}</p>
-    </div>
+  <li class="pub">
+    <p class="pub__title">{% assign href = p.links.ads | default: p.links.doi | default: p.links.arxiv | default: p.links.url %}{% if href %}<a href="{{ href }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+    <p class="pub__authors">{{ authors }}</p>
+    <p class="pub__venue"><cite>{{ p.venue }}, {{ p.year }}</cite>{% if p.links %}<span class="pub__links">{% if p.links.ads %}<a href="{{ p.links.ads }}">ADS</a>{% endif %}{% if p.links.arxiv %}<a href="{{ p.links.arxiv }}">arXiv</a>{% endif %}{% if p.links.doi %}<a href="{{ p.links.doi }}">DOI</a>{% endif %}{% if p.links.pdf %}<a href="{{ p.links.pdf | relative_url }}">PDF</a>{% endif %}</span>{% endif %}</p>
   </li>
-  {% assign prev = y %}
 {% endfor %}
 </ol>

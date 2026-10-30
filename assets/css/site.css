@@ -187,11 +187,9 @@ sup { line-height: 0; }
 
 /* Publications */
 .pubs { list-style: none; margin: 0; padding: 0; }
-.pub { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr); gap: 1rem; padding: 1.1rem 0; border-top: 1px solid var(--rule); }
+.pub { padding: 1.1rem 0; border-top: 1px solid var(--rule); }
 .pub:first-child { border-top: 0; padding-top: .25rem; }
-.pub__year { font-family: var(--sans); font-size: .9rem; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: .2rem; }
-.pub--same { border-top-color: transparent; padding-top: .35rem; }
-.pub__body p { margin: 0; }
+.pub p { margin: 0; }
 .pub__title { font-size: 1.1rem; line-height: 1.4; font-weight: 500; }
 .pub__title a { color: var(--ink); text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); }
 .pub__title a:hover { color: var(--accent); text-decoration-color: currentColor; }

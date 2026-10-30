@@ -62,13 +62,10 @@ body_class: home
     <h2 class="section__title" id="pubs-h">Publications</h2>
     <div class="section__body">
       <p class="intro">Also on <a href="{{ a.ads_library }}">my NASA ADS library</a> and <a href="{{ a.google_scholar }}">Google Scholar</a>.</p>
-      {% assign astro = site.data.publications | where: 'topic', 'astro' %}
-      {% assign eng = site.data.publications | where: 'topic', 'engineering' %}
-      {% include publist.html items=astro %}
-      {% if eng.size > 0 %}
-      <h3 class="subhead">Earlier work in electrical engineering</h3>
-      {% include publist.html items=eng %}
-      {% endif %}
+      <h3 class="subhead subhead--first">First author</h3>
+      {% include publist.html role="first" %}
+      <h3 class="subhead">Co-author</h3>
+      {% include publist.html role="co" %}
     </div>
   </div>
 </section>
