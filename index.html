@@ -6,6 +6,7 @@ body_class: home
 {% assign a = site.author %}
 <section class="hero" aria-labelledby="hero-name">
   <canvas class="hero__shell" aria-hidden="true" data-src="{{ '/assets/sim/' | relative_url }}"></canvas>
+  <img class="hero__photo" src="{{ a.photo | relative_url }}" alt="Portrait of Soham Mandal" width="760" height="760">
   <div class="hero__inner wrap">
     <h1 class="hero__name" id="hero-name">Soham<br>Mandal</h1>
     <p class="hero__lede">I study supernovae and the fast outflows they drive, and build numerical methods that can follow them as they grow.</p>
@@ -26,7 +27,6 @@ body_class: home
   <div class="section__grid wrap">
     <h2 class="section__title" id="about-h">About</h2>
     <div class="section__body about">
-      <img class="about__photo" src="{{ a.photo | relative_url }}" alt="Portrait of Soham Mandal" width="580" height="558">
       <div class="prose">
         <p>I am a Distinguished Postdoctoral Fellow at the Academia Sinica Institute of Astronomy and Astrophysics. Before that I was a VITA Postdoctoral Fellow at the University of Virginia, from September 2024 to August 2026. I received my PhD from Purdue University, advised by <a href="https://www.physics.purdue.edu/duffell/index.html">Prof. Paul Duffell</a>.</p>
         <p>I study high-velocity astrophysical outflows and develop numerical techniques for modelling them. I wrote <a href="{{ '/research/sprout/' | relative_url }}">Sprout</a>, a hydro code whose computational domain expands with the fluid, which makes it cheap to follow outflows that grow over many orders of magnitude in space and time. My main interests are supernovae, the explosive deaths of stars, and the remnants they leave behind, along with the stellar evolution and radiative processes that shape what we observe. I have also worked on astrophysical jets, from both the theory and the observing side.</p>
@@ -52,7 +52,7 @@ body_class: home
   </div>
 </section>
 
-<section class="section" id="research" aria-labelledby="research-h">
+<section class="section section--dark" id="research" aria-labelledby="research-h">
   <div class="section__grid wrap">
     <h2 class="section__title" id="research-h">Research</h2>
     <div class="section__body">

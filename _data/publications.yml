@@ -26,6 +26,7 @@
   venue: "The Astrophysical Journal 1004, 53"
   year: 2026
   links:
+    doi: "https://doi.org/10.3847/1538-4357/ae685d"
     arxiv: "https://arxiv.org/abs/2508.10752"
 
 - title: "Measurement of Anisotropies in Supernova Remnant Observations and Their Interpretation Using Numerical Models"
@@ -68,6 +69,8 @@
   authors: "Z. Ding, D. Milisavljevic, T. Martin, T. Temim, J. C. Raymond, S. Mandal, L. Drissen"
   venue: "The Astrophysical Journal 1007, 130"
   year: 2026
+  links:
+    doi: "https://doi.org/10.3847/1538-4357/ae84c0"
 
 - title: "The Non-uniform Expansion of the Crab Nebula"
   authors: "T. Martin, D. Milisavljevic, T. Temim, S. Mandal, P. Duffell, L. Drissen, Z. Ding"

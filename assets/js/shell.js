@@ -54,15 +54,37 @@
     dctx.setTransform(1, 0, 0, 1, 0, 0);
   }
 
-  function geometry(W, H) {
-    var wide = W / H > 1.05;
-    // the forward shock sits at ~93% of the quadrant at the end of the run
-    var R = wide ? Math.min(H * 0.86, W * 0.42) : Math.min(W * 0.55, H * 0.34);
-    // rot turns the remnant so the symmetry axis, where the run has a small
-    // numerical artefact, points off-screen rather than straight up
-    return wide ? { cx: W * 0.71, cy: H * 1.02, S: R / 0.93, rot: -0.87 }
-                : { cx: W * 0.62, cy: H * 0.33, S: R / 0.93, rot: -0.87 };
+  // Layout in CSS pixels. The full remnant sits on the right on wide screens and
+  // above the text on narrow ones, with the portrait inside the cold ejecta.
+  // R is the final forward-shock radius; the reverse shock sits near 0.78 R.
+  function geometry(w, h) {
+    var wide = w / h > 1.05 && w > 760;
+    var R, cx, cy;
+    if (wide) {
+      R = Math.min(h * 0.44, w * 0.26);
+      cx = Math.min(w * 0.74, w - R - 40);
+      cy = h * 0.5;
+    } else {
+      R = w * 0.4;
+      cx = w * 0.5;
+      cy = R + 28;
+    }
+    // rot keeps the symmetry axis, where the run has a small numerical
+    // artefact, away from the top of the remnant
+    return { cx: cx, cy: cy, R: R, S: R / 0.93, pr: R * 0.6, rot: -0.87 };
   }
+
+  var hero = canvas.parentNode;
+  function placePhoto() {
+    var r = canvas.getBoundingClientRect();
+    var g = geometry(r.width, r.height);
+    hero.style.setProperty('--cx', g.cx + 'px');
+    hero.style.setProperty('--cy', g.cy + 'px');
+    hero.style.setProperty('--pr', g.pr + 'px');
+    hero.classList.add('hero--placed');
+    return g;
+  }
+  placePhoto();
 
   function paint(source, size) {
     lastSource = [source, size];
@@ -71,11 +93,11 @@
     var W = Math.round(r.width * dpr), H = Math.round(r.height * dpr);
     if (canvas.width !== W || canvas.height !== H) { canvas.width = W; canvas.height = H; }
     colourise(source, size);
-    var g = geometry(W, H), S = g.S;
+    var g = placePhoto(), S = g.S * dpr;
     ctx.clearRect(0, 0, W, H);
     ctx.imageSmoothingEnabled = true;
     ctx.imageSmoothingQuality = 'high';
-    ctx.setTransform(1, 0, 0, 1, g.cx, g.cy);
+    ctx.setTransform(1, 0, 0, 1, g.cx * dpr, g.cy * dpr);
     ctx.rotate(g.rot);
     ctx.drawImage(disk, -S, -S, 2 * S, 2 * S);
     ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -113,6 +135,6 @@
   var rt;
   window.addEventListener('resize', function () {
     clearTimeout(rt);
-    rt = setTimeout(function () { if (lastSource) paint(lastSource[0], lastSource[1]); }, 150);
+    rt = setTimeout(function () { if (lastSource) paint(lastSource[0], lastSource[1]); else placePhoto(); }, 150);
   });
 })();
