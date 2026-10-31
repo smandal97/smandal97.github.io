@@ -6,9 +6,11 @@ body_class: home
 {% assign a = site.author %}
 <section class="hero" aria-labelledby="hero-name">
   <canvas class="hero__shell" aria-hidden="true" data-src="{{ '/assets/sim/' | relative_url }}"></canvas>
-  <img class="hero__photo" src="{{ a.photo | relative_url }}" alt="Portrait of Soham Mandal" width="760" height="760">
   <div class="hero__inner wrap">
-    <h1 class="hero__name" id="hero-name">Soham<br>Mandal</h1>
+    <div class="hero__id">
+      <img class="hero__avatar" src="{{ a.photo | relative_url }}" alt="Portrait of Soham Mandal" width="760" height="760">
+      <h1 class="hero__name" id="hero-name">Soham<br>Mandal</h1>
+    </div>
     <p class="hero__lede">I study supernovae and the fast outflows they drive, and build numerical methods that can follow them as they grow.</p>
     <p class="hero__role">{{ a.position }}, <a href="{{ a.institution_url }}">{{ a.institution }}</a></p>
     <ul class="hero__links">
@@ -52,7 +54,7 @@ body_class: home
   </div>
 </section>
 
-<section class="section section--dark" id="research" aria-labelledby="research-h">
+<section class="section" id="research" aria-labelledby="research-h">
   <div class="section__grid wrap">
     <h2 class="section__title" id="research-h">Research</h2>
     <div class="section__body">
@@ -62,7 +64,7 @@ body_class: home
         <div class="project__text">
           <h3 class="project__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
           <p>{{ p.summary }}</p>
-          <p class="meta">{% if p.paper %}<a href="{{ p.paper }}">{{ p.paper_label }}</a>{% endif %}</p>
+          {% if p.papers %}<ul class="papers meta">{% for x in p.papers %}<li><a href="{{ x.url }}">{{ x.label }}</a></li>{% endfor %}</ul>{% endif %}
         </div>
         {% if p.image %}
         <a class="project__fig" href="{{ p.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ p.image | relative_url }}" alt="" loading="lazy"></a>

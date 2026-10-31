@@ -4,8 +4,9 @@ order: 3
 summary: "3D models of remnants expanding into their surroundings, analysed through angular power spectra of the Rayleigh–Taylor structure at the interface. Applied to Chandra images of Tycho's remnant, the same spectrum recovers the scale of its fleece-like features and gives a circumstellar density of about 0.28 cm⁻³."
 image: /images/snr_synthetic.png
 image_alt: "Synthetic X-ray image of a simulated supernova remnant: a bright, filamentary half-shell in orange and purple."
-paper: "https://ui.adsabs.harvard.edu/abs/2024ApJ...972...87M"
-paper_label: "Mandal et al. 2023, ApJ 956, 130 and 2024, ApJ 972, 87"
+papers:
+  - { label: "Mandal et al. 2023, ApJ 956, 130", url: "https://ui.adsabs.harvard.edu/abs/2023ApJ...956..130M" }
+  - { label: "Mandal et al. 2024, ApJ 972, 87", url: "https://ui.adsabs.harvard.edu/abs/2024ApJ...972...87M" }
 ---
 
 We develop a suite of 3D hydrodynamic models of supernova remnants (SNRs) expanding against the circumstellar medium (CSM). We study the Rayleigh-Taylor instability forming at the expansion interface by calculating an angular power spectrum for each of these models. The power spectra of young SNRs are seen to exhibit a dominant angular mode, which is a diagnostic of their ejecta density profile as found by previous studies. The steep scaling of power at smaller modes and the time evolution of the spectra are indicative of the absence of a turbulent cascade. Instead, as the time evolution of the spectra suggests, they may be governed by an angular mode-dependent net growth rate. We also study the impact of anisotropies in the ejecta and in the CSM on the power spectra of velocity and density. We confirm that perturbations in the density field (whether imposed on the ejecta or the CSM) do not influence the anisotropy of the remnant significantly unless they have a very large amplitude and form large-scale coherent structures. In any case, these clumps can only affect structures on large angular scales. The power spectrum on small angular scales is completely independent of the initial clumpiness and governed only by the growth and saturation of the Rayleigh-Taylor instability.

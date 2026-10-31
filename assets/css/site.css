@@ -300,48 +300,25 @@ sup { line-height: 0; }
 .cvlist__place { font-size: .975rem; color: var(--muted); line-height: 1.45; }
 @media (max-width: 40rem) { .section__body.exp { grid-template-columns: 1fr; gap: 2.25rem; } }
 
-/* ---------- Portrait inside the remnant ---------- */
-.hero { --cx: 74%; --cy: 50%; --pr: min(16rem, 26vh); }
-.hero__photo {
-  position: absolute; z-index: 0;
-  left: calc(var(--cx) - var(--pr)); top: calc(var(--cy) - var(--pr));
-  width: calc(2 * var(--pr)); height: calc(2 * var(--pr));
+/* ---------- Portrait beside the name ---------- */
+.hero__id { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2rem); margin: 0 0 1.75rem; }
+.hero__id .hero__name { margin: 0; }
+.hero__avatar {
+  flex: none; width: clamp(5rem, 13vw, 10.5rem); aspect-ratio: 1; height: auto;
   object-fit: cover; border-radius: 50%;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, .14), 0 0 0 10px var(--night), 0 0 60px 10px rgba(242, 140, 40, .18);
-  opacity: 0;
+  box-shadow: 0 0 0 3px var(--night), 0 0 0 5px var(--ember);
 }
-.hero--placed .hero__photo { opacity: 1; transition: opacity .6s ease; }
-.hero__inner { position: relative; z-index: 1; }
-.hero::after { background: linear-gradient(90deg, var(--night) 0%, color-mix(in srgb, var(--night) 75%, transparent) 34%, transparent 52%); }
-@media (max-width: 48rem), (max-aspect-ratio: 21/20) {
-  .hero { --cx: 50%; --cy: calc(40vw + 28px); --pr: 24vw; }
-  .hero::after { background: none; }
-  .hero__inner { padding-top: calc(80vw + 4rem); }
-}
-@media (prefers-reduced-motion: reduce) { .hero--placed .hero__photo { transition: none; } }
+@media (max-width: 48rem) { .hero__avatar { width: clamp(4.5rem, 24vw, 6.5rem); } }
 
-/* About now has no photo */
+/* About without a photo */
 .about { grid-template-columns: minmax(0, 1fr); max-width: 42rem; }
 
-/* ---------- Dark band for research ---------- */
-.section--dark {
-  background: var(--night); color: #E6E1F1; border-top: 0;
-  --rule: rgba(255, 255, 255, .1); --muted: #A99FC6;
-}
-.section--dark + .section { border-top: 0; }
-.section--dark .section__title { color: #fff; }
-.section--dark .project p { color: #D9D3EA; }
-.section--dark .project__title a { color: #fff; background-image: linear-gradient(var(--ember), var(--ember)); }
-.section--dark .project__title a:hover { color: var(--flash); }
-.section--dark .meta, .section--dark .project .meta { color: var(--muted); }
-.section--dark .meta a, .section--dark a { color: #F7A35C; }
-.section--dark .meta a:hover, .section--dark a:hover { color: var(--flash); }
-.section--dark .project__fig { box-shadow: 0 0 0 1px rgba(255, 255, 255, .08); }
-
-/* Keep the phone nav on one line; it scrolls sideways if it doesn't fit */
-@media (max-width: 40rem) {
-  .topbar nav { width: 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-  .topbar nav::-webkit-scrollbar { display: none; }
-  .topbar ul { flex-wrap: nowrap; gap: .85rem; white-space: nowrap; }
-  .topbar nav a { font-size: .8125rem; }
+/* One link per paper, each on its own line so they're easy to tap */
+.papers { list-style: none; margin: .75rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+.papers a { display: inline-block; padding: .1rem 0; }
+.article__paper p { margin: 0; }
+.article__paper .papers { margin-top: .35rem; }
+.hero__avatar { width: clamp(4.5rem, 8vw, 7.5rem); }
+@media (min-width: 48.01rem) {
+  .hero::after { background: linear-gradient(90deg, var(--night) 0%, color-mix(in srgb, var(--night) 72%, transparent) 46%, transparent 68%); }
 }

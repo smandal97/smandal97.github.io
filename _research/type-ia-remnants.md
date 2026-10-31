@@ -2,8 +2,9 @@
 title: "Reading Type Ia explosions from their remnants"
 order: 1
 summary: "How a white dwarf exploded should leave a fingerprint in the turbulent clumps of its remnant. In 3D simulations, clumps rich in iron-group elements and clumps rich in silicon and sulfur grow to different sizes depending on the explosion mechanism. Tycho's remnant and SNR 0509-67.5 both point to double detonations of sub-Chandrasekhar-mass white dwarfs."
-paper: "https://doi.org/10.3847/1538-4357/ae5e50"
-paper_label: "Mandal et al. 2026, ApJ 1002, 155 and ApJ 1004, 53"
+papers:
+  - { label: "Mandal et al. 2026, ApJ 1002, 155", url: "https://doi.org/10.3847/1538-4357/ae5e50" }
+  - { label: "Mandal et al. 2026, ApJ 1004, 53", url: "https://doi.org/10.3847/1538-4357/ae685d" }
 ---
 
 Type Ia supernovae are thermonuclear explosions of white dwarfs, but which explosion channel produces them is still debated. This project uses the remnants left behind, hundreds of years later, to tell the channels apart.

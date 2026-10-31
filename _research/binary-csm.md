@@ -2,8 +2,8 @@
 title: "Viewing angle and the diversity of interacting supernovae"
 order: 0
 summary: "Mass transfer in a binary leaves the circumstellar material around an exploding star strongly aspherical. Building that material in 3D with Sprout and computing light curves along different lines of sight, the same explosion can look up to five times brighter or fainter depending on where we view it from, and spherical 1D fits can misjudge its mass-loss rate by more than 200%."
-paper: "https://arxiv.org/abs/2607.28519"
-paper_label: "Mandal et al. 2026, arXiv:2607.28519"
+papers:
+  - { label: "Mandal et al. 2026, arXiv:2607.28519", url: "https://arxiv.org/abs/2607.28519" }
 ---
 
 Many core-collapse supernovae explode inside circumstellar material (CSM) shed by the star before it died, and the collision shapes what we see. Most stars this massive live in binaries, so that material need not be spherical.
